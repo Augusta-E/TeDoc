@@ -28,7 +28,7 @@ border-right: solid 2.5px white;
    padding: 0;
    overflow-y: auto;
    overflow-x: hidden;
-   height: 85%;
+   height: 90%;
    list-style: none;
 }
 #navbar ul li {
@@ -37,7 +37,7 @@ border-right: solid 2.5px white;
 #main-header #navbar ul li a{
    display: block;
    text-align: left;
-   padding: .8rem 0 .8rem 0rem;
+   padding: .8rem 1rem .8rem 2rem;
    cursor: pointer;
    text-decoration: none;
    color:white;
@@ -68,7 +68,7 @@ margin-bottom: 1rem;
    padding: 1.5rem;
    text-align: left;
    background-color: ddd;
-   border-radius: 7px;
+   border-radius: 5rem;
    margin-bottom: 1rem;
 }
 #main-doc .main-section:last-child .main-article ul{
