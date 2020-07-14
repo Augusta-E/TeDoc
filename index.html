@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+   <head lang="en">
+      <meta charset="UTF-8">
+      <meta name="viewpoint" content="width=device-width, initial-scale=1.0">
+      <link rel="stylesheet" href="style.css">
+      <title>Introduction to Git</title>
+   </head>
+   <body>
+      <header id="main-header">
+         <nav id="navbar">
+            <h1>GIT DOCUMENTATION</h1>
+            <ul>
+               <li class="nav-link"><a href="#What-is-Git">What is Git</a></li>
+               <li class="nav-link"><a href="#Why-Git">Why a Version Control System like Git is needed</a></li>
+               <li class="nav-link"><a href="#Download">Download git</a></li>
+               <li class="nav-link"><a href="#Create-local">Create your local Git repository</a></li>
+               <li class="nav-link"><a href="#Staging-and-Committing-the-code">Staging and Committing the code</a></li>
+               <li class="nav-link"><a href="#Git-Status-and-Git-Log">Git Status and Git Log</a></li>
+               <li class="nav-link"><a href="#Branches">Branches</a></li>
+               <li class="nav-link"><a href="#Merging">Merging</a></li>
+               <li class="nav-link"><a href="#The-Remote-Git-Repository">The Remote Git Repository</a></li>
+               <li class="nav-link"><a href="#Reference">Reference</a></li>
+            </ul>
+         </nav>
+      </header>
+      <main id="main-doc">
+         <section class="main-section" id="What-is-Git">
+            <header>What is Git</header>
+            <article class="main-article">
+               <p>Git is an Open Source Distributed Version Control System.</p>
+               <ul>
+                  <li>Control System: This basically means that Git is a content tracker. So Git can be used to store content — it is mostly used to store code due to the other features it provides.</li>
+                  <li>Version Control System: The code which is stored in Git keeps changing as more code is added. Also, many developers can add code in parallel. So Version Control System helps in handling this by maintaining a history of what changes have happened. Also, Git provides features like branches and merges, which I will be covering later.</li>
+                  <li>Distributed Version Control System: Git has a remote repository which is stored in a server and a local repository which is stored in the computer of each developer. This means that the code is not just stored in a central server, but the full copy of the code is present in all the developers’ computers. Git is a Distributed Version Control System since the code is present in every developer’s computer. I will explain the concept of remote and local repositories later in this article.</li>
+               </ul>
+            </article>
+         </section>
+         <section class="main-section" id="Why-Git">
+            <header>Why a Version Control System like Git is needed</header>
+            <article class="main-article">
+               <p>Real life projects generally have multiple developers working in parallel. So a version control system like Git is needed to ensure there are no code conflicts between the developers.</p>
+               <p>Additionally, the requirements in such projects change often. So a version control system allows developers to revert and go back to an older version of the code.</p>
+               <p>Finally, sometimes several projects which are being run in parallel involve the same codebase. In such a case, the concept of branching in Git is very important.</p>
+               <h3>Let’s get started on using Git now</h3>
+               <p>Rather than mentioning all the concepts at once, I will explain the concepts of Git through an example so that it is easier to follow.</p>
+            </article>
+         </section>
+         <section class="main-section" id="Download">
+            <header>Download git</header>
+            <article class="main-article">
+               <p>This link has details on how to install Git in multiple operating systems:
+                  https://git-scm.com/book/en/v2/Getting-Started-Installing-Git
+                  </p>
+                  <p>Verify if Git is installed by using the following command in the command prompt:</p>
+                  <li>git --version</li>
+            </article>
+         </section>
+         <section class="main-section" id="Create-local">
+            <header>Create your local Git repository</header>
+            <article class="main-article">
+               <p>In your computer, create a folder for your project. Let’s call the project folder simple-git-demo.
+                  Go into your project folder and add a local Git repository to the project using the following commands:</p>
+               <ul>
+                  <li>cd simple-git-demo</li>
+                  <li>git init</li>
+               </ul>
+                  <p>The git init command adds a local Git repository to the project.</p>
+                  <h4>Let’s Add some Small Code now</h4>
+                  <p>Create a file called demo.txt in the project folder and add the following text into it:</p>
+                  <li>Initial Content</li>
+                  <p>Here we will be demoing with just plain text instead of actual code, since the main focus of this article is on Git and not on any specific programming language.</p>
+            </article>
+         </section>
+         <section class="main-section" id="Staging-and-Committing-the-code">
+            <header> Staging and Committing the code</header>
+            <article class="main-article">
+               <p>Committing is the process in which the code is added to the local repository. Before committing the code, it has to be in the staging area. The staging area is there to keep track of all the files which are to be committed.
+                  Any file which is not added to the staging area will not be committed. This gives the developer control over which files need to be committed.
+                  </p>
+                  <h4>Staging</h4>
+                  <p>Use the following command for staging the file:</p>
+                  <li>git add demo.txt</li>
+                  <p>In case you want to add multiple files you can use:</p>
+                  <li>git add file1 file2 file3</li>
+                  <p>If you want to add all the files inside your project folder to the staging area, use the following command:</p>
+                  <li>git add </li>
+                  <p>Use this carefully since it adds all the files and folders in your project to the staging area.</p>
+                  <h4>Committing</h4>
+                  <p>Use the following command to commit the file:</p>
+                  <li>git commit -m "Initial Commit"</li>
+                  <p>“Initial Commit” is the commit message here. Enter a relevant commit message to indicate what code changes were done in that particular commit.</p>
+            </article>
+         </section>
+         <section class="main-section" id="Git-Status-and-Git-Log">
+            <header> Git Status and Git Log</header>
+            <article class="main-article">
+               <p>Now modify the demo.txt file and add the following snippet: </p>
+                 <li>Initial Content Adding more Content</li>
+                  <h4>Status</h4>
+                  <p>Use git status to find out information regarding what files are modified and what files are there in the staging area — it shows other information as well, which we can ignore for now.<br>
+                     Use the following command to see the status:
+                     </p>
+                  <li>git status</li>
+                  <p>The status shows that demo.txt is modified and is not yet in the staging area.
+                     Now let us add demo.txt to the staging area and commit it using the following commands:
+                     </p>
+                  <li>git add demo.txt git commit -m "demo.txt file is modified"</li>
+                  <h3>Log</h3>
+                  <p>Use git log to print out all the commits which have been done up until now.
+                     The command used for this is:</p>
+                  <li> git log</li>
+                  <p>The log shows the author of each commit, the date of the commit, and the commit message.</p>
+            </article>
+         </section>
+         <section class="main-section" id="Branches">
+            <header>Branches</header>
+            <article class="main-article">
+               <p>Up until now we have not created any branch in Git. By default, Git commits go into the master branch. </p>
+                  <h4>What is a branch?</h4>
+                  <p>A branch is nothing but a pointer to the latest commit in the Git repository. So currently our master branch is a pointer to the second commit “demo.txt file is modified”.</p>
+                  <h4>Why are multiple branches needed?</h4>
+                  <p>TMultiple branches are needed to support multiple parallel developments. Refer the image below to see how branches work.</p>
+                  <h4>Create a New Branch in Local</h4>
+                  <li>git branch test</li>
+                  <p>This command creates the test branch.<br>
+                     We are still in the context of the master branch.
+                      In order to switch to the test branch. use the following command:
+                     </p>
+                  <li>git branch</li>
+                  <h4>Do Some Commits in the New Branch</h4>
+                  <p>Modify demo.txt by adding the following snippet:</p>
+                  <li>Initial Content Adding more Content Adding some Content from test Branch</li>
+                  <p>Now stage and commit using the following commands:</p>
+                  <li>git add demo.txt git commit -m "Test Branch Commit"</li>
+                  <p>This commit was done in the Test Branch, and now Test Branch is ahead of Master Branch by 1 commit — as the test branch also includes the 2 commits from the master branch.</p>
+                  <p>You can verify the commit history in Test Branch using:</p>
+                  <li>git log</li>
+            </article>
+         </section>
+         <section class="main-section" id="Merging">
+            <header> Merging</header>
+            <article class="main-article">
+               <p>Currently, Test Branch is ahead of the Master by 1 commit. Let’s say that now we want all the code in the Test Branch to be brought back to the Master Branch. This is where git merge is very useful.<br>
+                  In order to merge the code from the test branch into the master branch, follow these steps:</p>
+                  <p>First go back to the master branch:</p>                  
+                  <li>git checkout master</li>
+                  <p>Then run the merge command:</p>
+                  <li>git merge test</li>
+                  <p>After running these 2 commands, the merge should be successful. In this example, there are no conflicts.<br>
+                  But in real projects, there will be conflicts when a merge is being done. Resolving the conflict is something which comes with experience, so as you work more with Git you will be able to get the hang of resolving conflicts.</p>
+                  <p>Run git log now and you will notice that the master also has 3 commits.</p>
+                  </article>
+         </section>
+      </main>
+   </body>
+</html>
