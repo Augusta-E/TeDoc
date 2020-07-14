@@ -85,12 +85,10 @@ margin-bottom: 1rem;
    #main-header{
       position: absolute;
       top: 0;
-      left: 0;
-      right: 0;
       width: 100%;
       margin: 0;
       max-height: 400px;
-      max-width: 95%;
+      max-width: 100%;
    }
    #navbar{
       width: 100%;
@@ -99,7 +97,7 @@ margin-bottom: 1rem;
    #main-doc{
       position: relative;
       margin-left: 0px;
-      padding: 2rem 1rem;
+      padding: 2rem 1rem; 
       margin-top: 410px;
    }
 }
