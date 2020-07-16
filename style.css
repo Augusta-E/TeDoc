@@ -81,11 +81,11 @@ margin-bottom: 1rem;
 }
 
 /*phone*/
-@media (min-device-width:600px){
+@media (max-width:600px){
    #main-header{
       position: absolute;
       top: 0;
-      width: 100%;
+      width: 95%;
       margin: 0;
       max-height: 400px;
       max-width: 100%;
